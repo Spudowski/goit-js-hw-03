@@ -1,18 +1,13 @@
-function checkForSpam(message) {
-    message = message.toLowerCase();
-    if (message.includes("spam")) {
-        return true;
-    } else if (message.includes("sale")) {
-        return true;
-    } else {
-        return false;
+function filterArray(numbers, value) {
+    for (x of numbers) {
+        if (x > value) {
+            return x
+        }
     }
 }
 
-console.log(checkForSpam("Latest technology news"));
-console.log(checkForSpam("JavaScript weekly newsletter"));
-console.log(checkForSpam("Get best sale offers now!"));
-console.log(checkForSpam("Amazing SalE, only tonight!"));
-console.log(checkForSpam("Trust me, this is not a spam message"));
-console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!"));
-console.log(checkForSpam("[SPAM] How to earn fast money?"));
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+// console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+// console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+// console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
